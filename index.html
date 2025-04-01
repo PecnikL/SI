@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>
+      Tailwind Starter Template - Landing Page Template: Tailwind Toolbox
+    </title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+    <!--Replace with your tailwind.css once created-->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+    <!-- Define your gradient here - use online tools to find a gradient matching your branding-->
+    <style>
+
+
+.custom-hover-text:hover {
+  color: #2487ce;
+  }
+.custom-text{
+  color: #2487ce;
+  }
+
+      .gradient {
+    background: linear-gradient(90deg, #2487ce 0%, #daae51 100%);
+  }
+  .actionbtn {
+    color: #ffffff;
+    background: #2487ce;
+    padding: 8px 25px;
+    margin: 0 0 0 30px;
+    transition: 0.3s;
+  }
+  .sendbtn {
+    color: #ffffff;
+    background: #2487ce;
+    padding: 8px 25px;
+    transition: 0.3s;
+  }
+  #panoram {
+    background-image: url('assets/img/hero-bg-abstract.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  .footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+  </style>
+  </head>
+
+  <body class="leading-normal tracking-normal text-white" style="font-family: 'Source Sans Pro', sans-serif;">
+    
+    <!--Nav-->
+    <nav id="header" class="fixed w-full z-30 top-0 text-gray-800 bg-white pt-6">
+      <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+        <div class="absolute right-4 top-2 z-50">
+          <div class="flex space-x-2 bg-white p-2 rounded-full shadow text-sm">
+            <a href="index.html" class="hover:underline text-gray-700 font-semibold">SI</a>
+            <span class="text-gray-500">|</span>
+            <a href="en/index.html" class="hover:underline text-gray-700 font-semibold">EN</a>
+          </div>
+        </div>
+        <div class="flex items-center pl-4">
+          <a class="toggleColour text-gray-800 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="">
+            <img class="h-15 fill-current inline" viewBox="0 0 512.005 512.005" src="assets/img/navbar-logo_black.svg" alt="..." />
+          </a>
+        </div>
+        <div class="flex items-center">
+        </div>
+        <div class="block lg:hidden pr-4">
+          <button id="nav-toggle" class="flex items-center p-1 custom-text hover:text-gray-900 focus:outline-none focus:shadow-outline 
+          transform transition hover:scale-105 duration-300 ease-in-out">
+            <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto  mt-2 lg:mt-0 bg-white lg:bg-transparent text-gray-800 p-4 lg:p-0 z-20" id="nav-content">
+          <ul class="list-reset lg:flex justify-end flex-1 items-center">
+            <li class="mr-1">
+              <a class="inline-block hover:text-underline custom-hover-text py-2 px-4 no-underline" href="#">Domov</a>
+            </li>
+            <li class="mr-2">
+              <a class="inline-block hover:text-underline custom-hover-text py-2 px-4 no-underline" href="#">O nas</a>
+            </li>
+            <li>
+                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" 
+                class="inline-block hover:text-gray-800 hover:text-underline custom-hover-text py-2 px-4 no-underline
+                  text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 
+                  custom-hover-text md:p-0 font-medium flex items-center justify-between w-full md:w-auto">
+                  Izdelki in storitve 
+                  <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+                <!-- Dropdown menu -->
+                <div id="dropdownNavbar" class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44">
+                    <ul class="py-1" aria-labelledby="dropdownLargeButton">
+                    <li>
+                        <a href="doziranje-in-izlocanje-jalovine.html" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Doziranje in izločanje jalovine</a>
+                    </li>
+                    <li>
+                        <a href="drobljenje-in-mletje.html" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Drobljenje in mletje</a>
+                    </li>
+                    <li>
+                        <a href="sejanje.html" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Sejanje</a>
+                    </li>
+                    <li>
+                        <a href="transport.html" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Transport</a>
+                    </li>
+                    <li>
+                      <a href="mobilna_in_polmobilna_oprema.html" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Mobilna in polmobilna oprema</a>
+                    </li>
+                    <li>
+                      <a href="odprasevanje.html" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Odpraševanje</a>
+                    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="mr-4">
+              <a class="inline-block no-underline hover:text-gray-800 hover:text-underline custom-hover-text py-2 px-4" href="#">Kontakt</a>
+            </li>
+            <!--<li>
+              <button id="dropdownNavbarLink_2" data-dropdown-toggle="dropdownNavbar_2" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto">
+                <img class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" src="assets/img/language.png" alt="..."/>
+                <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+              <div id="dropdownNavbar_2" class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44">
+                  <ul class="py-1" aria-labelledby="dropdownLargeButton">
+                  <li class="mr-5">
+                    <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="index.html">SI</a>
+                  </li>
+                  <li class="mr-6">
+                    <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="en/index.html">EN</a>
+                  </li>
+                  </ul>
+              </div>
+          </li>-->
+          </ul>
+
+        </div>
+        <button
+        id="navAction"
+        class="hidden lg:block lg:mx-0 hover:underline actionbtn text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow focus:outline-none 
+        focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+        Spoznajte nas
+      </button>
+      </div>
+      <!--<hr class="border-b border-gray-100 opacity-25 my-0 py-0" />-->
+      <!-- Mobilna vrstica - vidna samo na manjših zaslonih -->
+<div class="w-full flex justify-between items-center px-4 py-2 lg:hidden">
+</div>
+    </nav>
+    
+    <!--Hero-->
+    <div id="panoram" class="pt-32">
+      <div class="container mx-auto px-6 text-white text-center">
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6 drop-shadow-md">
+          Dobrodošli pri Strojni inženiring d.o.o.
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 drop-shadow-md">
+          Zanesljiv partner za predelavo mineralnih surovin in industrijske rešitve.
+        </p>
+        <button
+          id="navAction_2" href="#" onclick="scrollToSection('contact'); return false;"
+          class="text-xl md:text-2xl mx-auto lg:mx-0 hover:underline actionbtn text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none 
+          focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+          Kontaktirajte nas
+        </button>
+      </div>
+    </div>
+
+    <section class="bg-white border-b py-8">
+      <div class="container max-w-5xl mx-auto m-8">
+        <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+          Strojni inženiring d.o.o.
+        </h1>
+        <div class="w-full mb-4">
+          <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+        </div>
+        <div class="flex flex-wrap">
+          <div class="w-5/6 sm:w-1/2 p-6">
+            <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+              O podjetju
+            </h3>
+            <p class="text-gray-600 mb-8">
+              V podjetju Strojni inženiring d.o.o. nadaljujemo več kot 60-letno tradicijo konstruiranja, proizvodnje, montaže in vzdrževanja opreme za predelavo mineralnih surovin v kamnolomih in separacijah. Projektiramo in izdelujemo mobilne, polmobilne in stabilne naprave za drobljenje in klasiranje, reciklažne enote, naprave za odpraševanje separacij in asfaltnih baz, filerske naprave, linije za mikromeljavo in klasiranje, linije za mletje stekla. Vabljeni k ogledu naše ponudbe.              <br />
+            </p>
+          </div>
+          <div class="w-full sm:w-1/2 p-6">
+            <img class="h-15 fill-current inline" viewBox="0 0 512.005 512.005" src="img_3.jpg" alt="..." />
+          </div>
+        </div>
+        <div class="flex flex-wrap flex-col-reverse sm:flex-row">
+          <div class="w-full sm:w-1/2 p-6 mt-6">
+            <img class="h-15 fill-current inline" viewBox="0 0 512.005 512.005" src="test.png" alt="..." />
+          </div>
+          <div class="w-full sm:w-1/2 p-6 mt-6">
+            <div class="align-middle">
+              <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+                Naša vizija
+              </h3>
+              <p class="text-gray-600 mb-8">
+                Projektiramo in izdelujemo mobilne, polmobilne in stabilne naprave za drobljenje in klasiranje, reciklažne enote, naprave za odpraševanje separacij in asfaltnih baz, filerske naprave, linije za mikromeljavo in klasiranje, linije za mletje stekla.                
+              <br/>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-white border-b py-8">
+      <div class="container mx-auto flex flex-wrap pt-4 pb-12">
+        <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+          Izdelki in storitve
+        </h1>
+        <div class="w-full mb-4">
+          <div class="h-1 mx-auto gradient w-33 opacity-25 my-0 py-0 rounded-t"></div>
+        </div>
+        <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+          <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+            <a href="#" class="flex flex-wrap no-underline hover:no-underline">
+              <p class="w-full text-gray-600 text-xs md:text-sm px-6">
+                Preverite ponudbo
+              </p>
+              <div class="w-full font-bold text-xl text-gray-800 px-6">
+                Doziranje in izločevanje jalovine              
+              </div>
+              <p class="text-gray-800 text-base px-6 mb-1">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
+              </p>
+              <img class="h-15 fill-current inline" viewBox="0 0 512.005 512.005" src="1.jpg" alt="..." />
+            </a>
+          </div>
+          <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+            <div class="flex items-center justify-start">
+              <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                Preveri katalog
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+          <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+            <a href="#" class="flex flex-wrap no-underline hover:no-underline">
+              <p class="w-full text-gray-600 text-xs md:text-sm px-6">
+              </p>
+              <div class="w-full font-bold text-xl text-gray-800 px-6">
+                Drobljenje in mletje
+              </div>
+              <p class="text-gray-800 text-base px-6 mb-5">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
+              </p>
+              <img class="h-15 fill-current inline" viewBox="0 0 512.005 512.005" src="2.jpg" alt="..." />
+            </a>
+          </div>
+          <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+            <div class="flex items-center justify-center">
+              <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                Action
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+          <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+            <a href="#" class="flex flex-wrap no-underline hover:no-underline">
+              <p class="w-full text-gray-600 text-xs md:text-sm px-6">
+              </p>
+              <div class="w-full font-bold text-xl text-gray-800 px-6">
+                Sejanje              </div>
+              <p class="text-gray-800 text-base px-6 mb-5">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
+              </p>
+              <img class="h-15 fill-current inline" viewBox="0 0 512.005 512.005" src="1.jpg" alt="..." />
+            </a>
+          </div>
+          <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+            <div class="flex items-center justify-end">
+              <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                Action
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+          <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+            <a href="#" class="flex flex-wrap no-underline hover:no-underline">
+              <p class="w-full text-gray-600 text-xs md:text-sm px-6">
+                Preverite ponudbo
+              </p>
+              <div class="w-full font-bold text-xl text-gray-800 px-6">
+                Doziranje in izločevanje jalovine              
+              </div>
+              <p class="text-gray-800 text-base px-6 mb-1">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
+              </p>
+              <img class="h-15 fill-current inline" viewBox="0 0 512.005 512.005" src="1.jpg" alt="..." />
+            </a>
+          </div>
+          <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+            <div class="flex items-center justify-start">
+              <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                Preveri katalog
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+          <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+            <a href="#" class="flex flex-wrap no-underline hover:no-underline">
+              <p class="w-full text-gray-600 text-xs md:text-sm px-6">
+              </p>
+              <div class="w-full font-bold text-xl text-gray-800 px-6">
+                Drobljenje in mletje
+              </div>
+              <p class="text-gray-800 text-base px-6 mb-5">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
+              </p>
+              <img class="h-15 fill-current inline" viewBox="0 0 512.005 512.005" src="2.jpg" alt="..." />
+
+            </a>
+          </div>
+          <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+            <div class="flex items-center justify-center">
+              <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                Action
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+          <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+            <a href="#" class="flex flex-wrap no-underline hover:no-underline">
+              <p class="w-full text-gray-600 text-xs md:text-sm px-6">
+              </p>
+              <div class="w-full font-bold text-xl text-gray-800 px-6">
+                Sejanje              </div>
+              <p class="text-gray-800 text-base px-6 mb-1">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
+              </p>
+              <img class="h-15 fill-current inline" viewBox="0 0 512.005 512.005" src="1.jpg" alt="..." />
+            </a>
+          </div>
+          <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+            <div class="flex items-center justify-end">
+              <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                Action
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="bg-gray-100 py-8 pt-32 -mt-32">
+      <div class="container max-w-5xl mx-auto m-8">
+        <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+          Kontakt
+        </h1>
+        <p class="text-center text-gray-800">Stopite v stik z nami.</p>
+        <br\>
+        <div class="w-full mb-4">
+          <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+        </div>
+        <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
+          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2768.394854731939!2d14.529043203364418!3d46.06316741251433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47653263b3c2a791%3A0x22c488f5a2923afb!2sKav%C4%8Di%C4%8Deva%20ulica%2066%2C%201000%20Ljubljana!5e0!3m2!1ssl!2ssi!4v1653392687233!5m2!1ssl!2ssi" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>     
+        <div class="flex flex-wrap">
+          <div class="w-full sm:w-1/2 p-6">
+            <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+              Naša pisarna
+            </h3>
+            <p class="text-gray-600 mb-8">
+              Strojni inženiring d.o.o.<br/>
+              Ulica 123, 1000 Ljubljana, Slovenija<br/>
+              Telefon: +386 1 234 5678<br/>
+              Email: info@strojni.si
+            </p>
+          </div>
+          <div class="w-full sm:w-1/2 p-6">
+            <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+              Pošljite nam sporočilo
+            </h3>
+            <form action="send.php" method="POST" class="bg-white shadow-xl rounded-2xl px-8 pt-6 pb-8 space-y-6">
+              <div>
+                <label class="block text-gray-700 text-sm font-semibold mb-2" for="name">Ime</label>
+                <input id="name" name="name" type="text" placeholder="Vaše ime"
+                  class="text-gray-800 w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+              </div>
+            
+              <div>
+                <label class="block text-gray-700 text-sm font-semibold mb-2" for="email">E-pošta</label>
+                <input id="email" name="email" type="email" placeholder="Vaš e-poštni naslov"
+                  class="text-gray-800 w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+              </div>
+            
+              <div>
+                <label class="block text-gray-700 text-sm font-semibold mb-2" for="message">Sporočilo</label>
+                <textarea id="message" name="message" rows="5" placeholder="Vaše sporočilo"
+                  class="text-gray-800 w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400" required></textarea>
+              </div>
+            
+              <div>
+                <button type="submit"
+                  class="w-full sendbtn bg-gradient-to-r from-blue-500 to-yellow-400 text-white font-bold py-3 px-6 rounded-full shadow-md hover:scale-105 transition transform duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400">
+                  Pošlji sporočilo
+                </button>
+              </div>
+            </form>         
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Change the colour #f8fafc to match the previous section colour -->
+    <svg class="wave-top" viewBox="0 0 1439 147" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-1.000000, -14.000000)" fill-rule="nonzero">
+          <g class="wave" fill="#f8fafc">
+            <path
+              d="M1440,84 C1383.555,64.3 1342.555,51.3 1317,45 C1259.5,30.824 1206.707,25.526 1169,22 C1129.711,18.326 1044.426,18.475 980,22 C954.25,23.409 922.25,26.742 884,32 C845.122,37.787 818.455,42.121 804,45 C776.833,50.41 728.136,61.77 713,65 C660.023,76.309 621.544,87.729 584,94 C517.525,105.104 484.525,106.438 429,108 C379.49,106.484 342.823,104.484 319,102 C278.571,97.783 231.737,88.736 205,84 C154.629,75.076 86.296,57.743 0,32 L0,0 L1440,0 L1440,84 Z"
+            ></path>
+          </g>
+          <g transform="translate(1.000000, 15.000000)" fill="#FFFFFF">
+            <g transform="translate(719.500000, 68.500000) rotate(-180.000000) translate(-719.500000, -68.500000) ">
+              <path d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496" opacity="0.100000001"></path>
+              <path
+                d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z"
+                opacity="0.100000001"
+              ></path>
+              <path d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z" opacity="0.200000003"></path>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+    <!--Footer-->
+    <footer class="bg-white">
+      <div class="container mx-auto px-8 text-center align-items-center  justify-content-center">
+        <div class="w-full flex flex-col md:flex-row py-6">
+          <div class="flex-1 mb-6 text-black">
+
+            <!-- Logo in naziv -->
+            <div>
+              <p class="font-bold text-lg">Strojni inženiring d. o. o.</p>
+              <p class="text-sm text-gray-600">Z vami že več kot 60 let.</p>
+            </div>
+          </div>
+
+
+
+          <div class="flex-1">
+            <p class="uppercase text-gray-500 md:mb-6">Strojni inženiring d. o. o.</p>
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <p class="text-gray-800"><strong>Naslov: </strong>Kavčičeva ulica 66, 1000 Ljubljana, Slovenija</p>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <p class="text-gray-800"><strong>Telefon: </strong>  +386 1 5864 517</p>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <p class="text-gray-800"><strong>Email: </strong>info@stroing.si</p>
+              </li>
+            </ul>
+          </div>
+          <div class="flex-1">
+            <p class="uppercase text-gray-500 md:mb-6">Naše storitve</p>
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="#" class="no-underline hover:underline text-gray-800 custom-hover-text">O nas</a>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="#" class="no-underline hover:underline text-gray-800 custom-hover-text">Izdelki in storitve</a>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a href="#" class="no-underline hover:underline text-gray-800 custom-hover-text">Kontakt</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="text-center text-gray-500 text-sm mt-8 border-t pt-4">
+        © <span class="font-semibold">Strojni inženiring d. o. o.</span> | Vse pravice pridržane.
+      </div>
+    </footer> 
+    <div>
+      <p class="text-center p-3">Distributed By: <a href="https://themewagon.com/">Themewagon</a></p>
+    </div>
+    <!-- jQuery if you need it
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  -->
+    <script>
+      var scrollpos = window.scrollY;
+      var header = document.getElementById("header");
+      var navcontent = document.getElementById("nav-content");
+      var navaction = document.getElementById("navAction");
+      var brandname = document.getElementById("brandname");
+      var toToggle = document.querySelectorAll(".toggleColour");
+
+      document.addEventListener("scroll", function () {
+        /*Apply classes for slide in bar*/
+        scrollpos = window.scrollY;
+
+        if (scrollpos > 10) {
+          header.classList.add("bg-white");
+          navaction.classList.remove("bg-white");
+          navaction.classList.add("gradient");
+          //navaction.classList.remove("text-gray-800");
+          //navaction.classList.add("text-white");
+          //Use to switch toggleColour colours
+          for (var i = 0; i < toToggle.length; i++) {
+            //toToggle[i].classList.add("text-gray-800");
+            toToggle[i].classList.remove("text-white");
+          }
+          header.classList.add("shadow");
+          //navcontent.classList.remove("bg-gray-100");
+          //navcontent.classList.add("bg-white");
+        } else {
+          //header.classList.remove("bg-white");
+          //navaction.classList.remove("gradient");
+          //navaction.classList.add("bg-white");
+          //navaction.classList.remove("text-white");
+          navaction.classList.add("text-gray-800");
+          //Use to switch toggleColour colours
+          for (var i = 0; i < toToggle.length; i++) {
+            //oToggle[i].classList.add("text-white");
+            toToggle[i].classList.remove("text-gray-800");
+          }
+
+          header.classList.remove("shadow");
+          navcontent.classList.remove("bg-white");
+          navcontent.classList.add("bg-gray-100");
+        }
+      });
+    </script>
+    <script>
+      /*Toggle dropdown list*/
+      /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+
+      var navMenuDiv = document.getElementById("nav-content");
+      var navMenu = document.getElementById("nav-toggle");
+
+      document.onclick = check;
+      function check(e) {
+        var target = (e && e.target) || (event && event.srcElement);
+
+        //Nav Menu
+        if (!checkParent(target, navMenuDiv)) {
+          // click NOT on the menu
+          if (checkParent(target, navMenu)) {
+            // click on the link
+            if (navMenuDiv.classList.contains("hidden")) {
+              navMenuDiv.classList.remove("hidden");
+            } else {
+              navMenuDiv.classList.add("hidden");
+            }
+          } else {
+            // click both outside link and outside menu, hide menu
+            navMenuDiv.classList.add("hidden");
+          }
+        }
+      }
+      function checkParent(t, elm) {
+        while (t.parentNode) {
+          if (t == elm) {
+            return true;
+          }
+          t = t.parentNode;
+        }
+        return false;
+      }
+
+      function scrollToSection(id) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+    </script>
+    <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+
+  </body>
+</html>
